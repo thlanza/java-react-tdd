@@ -4,6 +4,15 @@ plugins {
 	id 'java'
 }
 
+jar {  
+    manifest {  
+        attributes(  
+   
+                'Main-Class': 'com.weCode.bookStore.BookStoreApplication.java'  
+        )  
+    }  
+} 
+
 group = 'com.weCode'
 version = '0.0.1-SNAPSHOT'
 

@@ -7,10 +7,9 @@ plugins {
 group = 'com.weCode'
 version = '0.0.1-SNAPSHOT'
 
-java {
-	sourceCompatibility = JavaVersion.VERSION_14_0_2
-	targetCompatibility = JavaVersion.VERSION_14_0_2
-}
+java.sourceCompatibility = JavaVersion.VERSION_14
+java.targetCompatibility = JavaVersion.VERSION_14
+
 
 configurations {
 	compileOnly {

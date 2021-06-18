@@ -1,5 +1,16 @@
-apply plugin: 'java'
-apply plugin: 'io.spring.dependency-management'
+buildscript {
+    ext {
+        springBootVersion = '2.5.1'
+    }
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.5.1")
+    }
+}
 
 plugins {
 	id 'org.springframework.boot' version '2.5.1'

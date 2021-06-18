@@ -1,3 +1,13 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE")
+    }
+}
+
+
 plugins {
 	id 'org.springframework.boot' version '2.5.1'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -38,18 +48,13 @@ dependencies {
 	}
 }
 
-jar {  
-    manifest {  
-        attributes(  
-   
-                'Main-Class': 'com.weCode.bookStore.BookStoreApplication'  
-        )  
-    }  
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.6'
 }
 
 task stage(type: Copy, dependsOn: [clean, build]) {
     from jar.archivePath
-    into project.rootDir 
+    into project.rootDir
     rename {
         'app.jar'
     }

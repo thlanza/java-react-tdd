@@ -5,6 +5,7 @@ before_install:
  - chmod +x gradlew
 script:
   - ./gradlew check
+  - ./gradlew build
 deploy:
    provider: heroku
    api_key: $HEROKU_TOKEN 

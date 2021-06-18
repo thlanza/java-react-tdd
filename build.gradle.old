@@ -1,7 +1,7 @@
 plugins {
-	id 'org.springframework.boot' version '2.5.1'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
+	id("org.springframework.boot") version '2.5.1'
+	id("io.spring.dependency-management") version '1.0.11.RELEASE'
+	id("java")
 }
 
 group = 'com.weCode'
@@ -12,10 +12,6 @@ java.targetCompatibility = JavaVersion.VERSION_14
 
 
 configurations {
-	developmentOnly
-	runtimeClasspath {
-		extendsFrom developmentOnly
-	}
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
@@ -33,11 +29,20 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
+	testCompile 'org.mockito:mockito-core'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 }
 
+jar {  
+    manifest {  
+        attributes(  
+   
+                'Main-Class': 'com.weCode.bookStore.BookStoreApplication'  
+        )  
+    }  
+} 
 
 test {
 	useJUnitPlatform()

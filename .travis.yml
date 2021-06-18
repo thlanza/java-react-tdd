@@ -3,6 +3,8 @@ jdk:
    - openjdk14
 before_install:
  - chmod +x gradlew
+script:
+  - ./gradlew check
 deploy:
    provider: heroku
    api_key: $HEROKU_TOKEN 

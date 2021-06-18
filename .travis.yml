@@ -8,4 +8,6 @@ deploy:
    api_key: 
       secure: $HEROKU_TOKEN
    app: "book-demo-store-tdd"
-  
+   on:
+      branch: "main"
+ 
